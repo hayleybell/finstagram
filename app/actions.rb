@@ -104,3 +104,8 @@ delete '/likes/:id' do
     like.destroy
     redirect(back)
 end
+
+not_found do
+    status 404
+    "oops"
+end
