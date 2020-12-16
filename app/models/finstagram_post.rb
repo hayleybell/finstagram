@@ -16,13 +16,25 @@ class FinstagramPost < ActiveRecord::Base
 
       if time_ago_in_hours >= 24
         time_ago_in_days = time_ago_in_hours / 24
-        "#{time_ago_in_days.to_i} days ago"
+
+        if time_ago_in_days >= 7
+            time_ago_in_weeks = time_ago_in_days / 7
+            print_time_ago(time_ago_in_weeks, "week")
+        else
+            print_time_ago(time_ago_in_days, "day")
+        end
       else
-        "#{time_ago_in_hours.to_i} hours ago"
+        print_time_ago(time_ago_in_hours, "hour")
       end
     else
-      "#{time_ago_in_minutes.to_i} minutes ago"
+      print_time_ago(time_ago_in_minutes, "minute")
     end
+  end
+
+  def print_time_ago(value, unit)
+    rounded_value = value.to_i
+    plural_unit = rounded_value == 1 ? unit : unit + "s"
+    "#{rounded_value} #{plural_unit} ago"
   end
 
   def like_count
