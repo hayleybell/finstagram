@@ -19,6 +19,11 @@
     display: flex;
     flex-direction: column;
     font-size: 0.85em;
+    align-items: flex-end;
+  }
+
+  header .login-info a {
+      margin-right: 0 !important;
   }
 
   header .login-info a {

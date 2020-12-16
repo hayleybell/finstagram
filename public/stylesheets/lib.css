@@ -29,10 +29,7 @@ header {
   overflow: hidden;
   display: flex;
   align-items: baseline;
-}
-
-header > .login-info {
-  margin-left: auto;
+  justify-content: space-between;
 }
 
 main {

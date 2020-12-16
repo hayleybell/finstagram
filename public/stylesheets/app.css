@@ -1,6 +1,11 @@
 header {
     background-color: #244751;
     color: #E8FDFF;
+    padding: 0.75rem;
+}
+
+header .login-info :not(:last-child) {
+    margin-right: 0.5rem;
 }
 
 body {
