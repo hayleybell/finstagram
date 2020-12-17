@@ -22,7 +22,7 @@
     align-items: flex-end;
   }
 
-  header .login-info a {
+  header .login-info * {
       margin-right: 0 !important;
   }
 

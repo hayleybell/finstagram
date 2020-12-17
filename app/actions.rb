@@ -4,19 +4,16 @@ helpers do
   end
 end
 
-# homepage (index)
 get '/' do
   @finstagram_posts = FinstagramPost.order(created_at: :desc)
   erb(:index)
 end
 
-# signup page
 get '/signup' do
   @user = User.new
   erb(:signup)
 end
 
-# signup a user
 post '/signup' do
   email = params[:email]
   avatar_url = params[:avatar_url]
@@ -32,12 +29,10 @@ post '/signup' do
   end
 end
 
-# login form
 get '/login' do
     erb(:login)
 end
 
-# login a user
 post '/login' do
   username = params[:username]
   password = params[:password]
